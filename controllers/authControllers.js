@@ -60,9 +60,9 @@ const getOrders = (req, res) => {
             const year = String(date.getFullYear()).slice(-2);
             return `${day}-${month}-${year}`;
         };
-        console.log(currentDate);
         const date = new Date();
         const currentDate = formatDate(date);
+        console.log(currentDate);
         // console.log(currentDate);
         if (status === "all") {
             let sql = 'SELECT * FROM delivery_orders WHERE agent_id = ? AND dod = ?';
