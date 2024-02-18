@@ -61,7 +61,9 @@ const getOrders = (req, res) => {
             return `${day}-${month}-${year}`;
         };
         const date = new Date();
-        const currentDate = formatDate(date);
+        const formated = formatDate(date);
+        const currentDate = formated.replace(/\s/g, '').toString();
+        console.log(typeof(currentDate));
         console.log(currentDate);
         // console.log(currentDate);
         if (status === "all") {
